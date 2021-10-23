@@ -1,10 +1,10 @@
 import { Grid, IconButton } from '@material-ui/core';
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './Header.module.css'
 import { makeStyles } from '@material-ui/core/styles';
 import logo from '../../assets/img/logo.png'
 import Navbar from '../NavBar/Navbar.js';
-import { NavLink, Redirect } from 'react-router-dom';
+import {useAuth0} from "@auth0/auth0-react";
 
 
 const useStyles = makeStyles({
@@ -30,13 +30,18 @@ const useStyles = makeStyles({
 
 });
 
-
-
 const Header = () => {
-
   const classes = useStyles();
-  const [isAuth, logout] = useState(false);
-  
+  const {
+    user,
+    isAuthenticated,
+    loginWithRedirect,
+    logout,
+  } = useAuth0();
+
+  useEffect(() => {
+    console.log(user)
+  }, [user])
 
   return (
     <Grid className={classes.root} position="static">
@@ -50,12 +55,12 @@ const Header = () => {
       </Grid>
 
       <Grid className={s.loginBlock} md={1} sm={2} xs={2}>
-        {isAuth ?
-        <button onClick={() => logout(!isAuth)} className={s.buttonLogOut}><b>Log out</b></button>
-        :
-        <NavLink to={'/login'} className={s.buttonLogIn}>
-          <Redirect to={"/login"} /><b>Log in</b>
-        </NavLink>}
+          <button
+            onClick={isAuthenticated ? logout : loginWithRedirect}
+            className={isAuthenticated ? s.buttonLogOut : s.buttonLogIn}
+          >
+              <b>{isAuthenticated ? 'Log out' : 'Log in'}</b>
+          </button>
       </Grid>
 
     </Grid>
