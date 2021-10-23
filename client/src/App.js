@@ -4,29 +4,31 @@ import Login from './components/Login/Login';
 import { Blog } from './components/Blog';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { CommentPage, COMMENTSEXAMPLE } from './components/Comments/CommentPage';
+import history from './helpers/history'
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter history={history}>
       <div className='app-wrapper'>
       <Header />
+      <Blog />
       {/* <CommentPage {...COMMENTSEXAMPLE} /> */}
         <main>
-          <Route path = '/profile/' 
-            render={ () => <Profile /> 
+          <Route path = '/profile/'
+            render={ () => <Profile />
             }
           />
-          <Route path = '/blog' 
+          {/* <Route path = '/blog'
             render={ () => <Blog />
             }
-          />
-          <Route path = '/login' 
+          /> */}
+          <Route path = '/login'
             render={ () => <Login />
           }
           />
-          <Route path = '/comment/' 
-            render={ () => <CommentPage {...COMMENTSEXAMPLE} /> 
+          <Route path = '/comment/'
+            render={ () => <CommentPage {...COMMENTSEXAMPLE} />
             }
           />
         </main>
