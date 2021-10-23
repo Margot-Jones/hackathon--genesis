@@ -32,7 +32,7 @@ const Navbar = () => {
 
         <div className={s.item}>
           <NavLink to="/profile" activeClassName={s.activeLink}>
-           <AccountCircleOutlinedIcon htmlColor="#EBEBEB" fontSize="large" />
+            <AccountCircleOutlinedIcon htmlColor="#EBEBEB" fontSize="large" />
           </NavLink>
         </div>
 
@@ -41,11 +41,13 @@ const Navbar = () => {
             <MailOutlineOutlinedIcon htmlColor="#EBEBEB" fontSize="large" />
           </NavLink>
         </div>
+
         <div className={s.item}>
           <NavLink to="/login" activeClassName={s.activeLink}>
             <PublicIcon htmlColor="#EBEBEB" fontSize="large" />
           </NavLink>
         </div>
+        
         <div className={s.item}>
           <NavLink to="/comment" activeClassName={s.activeLink}>
             <PublicIcon htmlColor="#EBEBEB" fontSize="large" />
