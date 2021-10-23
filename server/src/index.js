@@ -40,8 +40,8 @@ db.once('open', function () {
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use('/api', routes)
 app.get('*', (req, res) =>
   res.sendFile('../../client/build/index.html'))
+app.use('/api', routes)
 
 app.listen(config.port, () => console.log(`App is ready on port ${config.port}`))
