@@ -16,7 +16,6 @@ const useStyles = makeStyles({
   },
 
   card: {
-    width: "455px",
     backgroundColor: "#1C0D1C",
   },
 
@@ -37,7 +36,7 @@ export const UserInfo = ({avatar, username, info}) => {
   const classes = useStyles();
 
   return (
-    <Card sx={{ maxWidth: 345 }} className={classes.card}>
+    <Card className={classes.card}>
       <CardActionArea>
         <CardMedia component="img" src={avatar} height="281" />
         <CardContent className={classes.cardContent}>
