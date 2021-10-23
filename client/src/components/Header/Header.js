@@ -1,9 +1,11 @@
 import { Grid, IconButton } from '@material-ui/core';
-import React from 'react';
+import React, { useState } from 'react';
 import s from './Header.module.css'
 import { makeStyles } from '@material-ui/core/styles';
 import logo from '../../assets/img/logo.png'
 import Navbar from '../NavBar/Navbar.js';
+import { NavLink, Redirect } from 'react-router-dom';
+
 
 const useStyles = makeStyles({
   root: {
@@ -28,9 +30,13 @@ const useStyles = makeStyles({
 
 });
 
+
+
 const Header = () => {
 
   const classes = useStyles();
+  const [isAuth, logout] = useState(false);
+  
 
   return (
     <Grid className={classes.root} position="static">
@@ -42,15 +48,15 @@ const Header = () => {
       <Grid className={s.navbar} md={9} sm={8} xs={7}>
         <Navbar />
       </Grid>
-{/*
+
       <Grid className={s.loginBlock} md={1} sm={2} xs={2}>
-        {props.isAuth ?
-        <button onClick={props.logout} className={s.buttonLogOut}><b>Log out</b></button>
+        {isAuth ?
+        <button onClick={() => logout(!isAuth)} className={s.buttonLogOut}><b>Log out</b></button>
         :
         <NavLink to={'/login'} className={s.buttonLogIn}>
           <Redirect to={"/login"} /><b>Log in</b>
         </NavLink>}
-      </Grid> */}
+      </Grid>
 
     </Grid>
   );

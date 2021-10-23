@@ -11,7 +11,8 @@ function App() {
     <BrowserRouter>
       <div className='app-wrapper'>
       <Header />
-      <CommentPage {...COMMENTSEXAMPLE} />
+      <Blog />
+      {/* <CommentPage {...COMMENTSEXAMPLE} /> */}
         <main>
           <Route path = '/profile/' 
             render={ () => <Profile /> 
