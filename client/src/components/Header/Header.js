@@ -9,8 +9,8 @@ import {useAuth0} from "@auth0/auth0-react";
 
 const useStyles = makeStyles({
   root: {
-    background: '#1C0D1C',
-    borderBottom: '2px solid #721D42',
+    background: '#2E0000',
+    borderBottom: '2px solid #410000',
     width: '100%',
     height: '60px',
     boxShadow: '0',
@@ -38,10 +38,6 @@ const Header = () => {
     loginWithRedirect,
     logout,
   } = useAuth0();
-
-  useEffect(() => {
-    console.log(user)
-  }, [user])
 
   return (
     <Grid className={classes.root} position="static">
