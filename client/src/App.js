@@ -27,6 +27,10 @@ function App() {
             render={ () => <Login />
           }
           />
+          <Route path = '/comment/'
+            render={ () => <CommentPage {...COMMENTSEXAMPLE} />
+            }
+          />
         </main>
       </div>
     </BrowserRouter>
