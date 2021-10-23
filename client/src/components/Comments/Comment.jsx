@@ -51,7 +51,7 @@ export const Comment = ({ author, avatar, text, date }) => {
         <Avatar className={classes.avatar} aria-label='avatar' src={avatar} />
       </Grid>
       <Grid item className={classes.card}>
-        <Card>
+        <Card variant='outlined'>
           <CardContent>
             <Grid container className={classes.authorDate}>
               <Grid container item alignItems='flex-start' xs={6}>

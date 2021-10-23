@@ -20,9 +20,11 @@ export const POSTEXAMPLE = {
   text: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
 };
 
+
+
 export const Post = ({ date, author, avatar, title, image, text }) => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
+    <div style={{ display: 'flex', flexDirection: 'row', margin: '0 auto' }}>
       <div style={{ marginRight: 20 }}>
         <Avatar sx={{ bgcolor: 'red' }} aria-label='avatar' src={avatar} />
       </div>

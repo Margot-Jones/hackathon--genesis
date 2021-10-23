@@ -11,20 +11,23 @@ function App() {
     <BrowserRouter>
       <div className='app-wrapper'>
       <Header />
-      <Blog />
       {/* <CommentPage {...COMMENTSEXAMPLE} /> */}
         <main>
           <Route path = '/profile/' 
             render={ () => <Profile /> 
             }
           />
-          {/* <Route path = '/blog' 
+          <Route path = '/blog' 
             render={ () => <Blog />
             }
-          /> */}
+          />
           <Route path = '/login' 
             render={ () => <Login />
           }
+          />
+          <Route path = '/comment/' 
+            render={ () => <CommentPage {...COMMENTSEXAMPLE} /> 
+            }
           />
         </main>
       </div>
