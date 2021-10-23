@@ -9,8 +9,8 @@ import { NavLink, Redirect } from 'react-router-dom';
 
 const useStyles = makeStyles({
   root: {
-    background: '#1C0D1C',
-    borderBottom: '2px solid #721D42',
+    background: '#2E0000',
+    borderBottom: '2px solid #410000',
     width: '100%',
     height: '60px',
     boxShadow: '0',
@@ -35,7 +35,7 @@ const useStyles = makeStyles({
 const Header = () => {
 
   const classes = useStyles();
-  const [isAuth, logout] = useState(false);
+  const [isAuth, logout] = useState(true);
   
 
   return (

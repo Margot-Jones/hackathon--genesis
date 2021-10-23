@@ -37,27 +37,27 @@
 
 .buttonLogOut{
   width: 100%;
-  background-color: #721D42;
-  color: #EBEBEB;
-  border: 1px solid #721D42;
+  background-color: #F6AA1C;
+  color: #410000;
+  border: 1px solid #F6AA1C;
 }
 
 .buttonLogOut:hover{
   background-color: #EBEBEB;
-  color: #721D42;
+  color: #F6AA1C;
   border: 1px solid #EBEBEB;
 }
 
 .buttonLogIn:hover{
-  background-color: #721D42;
-  color: #EBEBEB;
-  border: 1px solid #721D42;
+  background-color: #F6AA1C;
+  color: #410000;
+  border: 1px solid #F6AA1C;
 }
 
 .buttonLogIn {
   width: 100%;
   background-color: #EBEBEB;
-  color: #721D42;
+  color: #410000;
   text-decoration: none;
   text-align: center;
   font-size: 0.9em;

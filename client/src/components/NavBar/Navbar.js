@@ -30,12 +30,6 @@ const Navbar = () => {
   return (
       <Toolbar className={classes.toolbar}>
 
-        {/* <div className={`${s.item} ${s.active}`}>
-          <NavLink to="/login" activeClassName={s.activeLink}>
-            <ExitToAppOutlinedIcon htmlColor="#EBEBEB" fontSize="large" />
-          </NavLink>
-        </div> */}
-
         <div className={s.item}>
           <NavLink to="/profile" activeClassName={s.activeLink}>
            <AccountCircleOutlinedIcon htmlColor="#EBEBEB" fontSize="large" />
