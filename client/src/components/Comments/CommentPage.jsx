@@ -1,9 +1,13 @@
 import React from 'react';
 import { Comment } from './Comment';
+import { makeStyles } from '@material-ui/core/styles';
 
 import {
   Grid,
 } from '@material-ui/core';
+import { Blog } from '../Blog';
+
+
 
 export const COMMENTEXAMPLE = {
   author: 'asdd5',
@@ -13,6 +17,18 @@ export const COMMENTEXAMPLE = {
   date: '12.05.2021',
 };
 
+const useStyles = makeStyles({
+  commentStyle: {
+    height: 'auto',
+    backgroundColor: 'grey',
+    margin: '0 auto'
+  },
+  // adaptivityComment: {
+  //   '@media (max-width: 984px)': {
+  //     marginBottom: '500px'
+  //   }
+  // }
+});
 
 export const COMMENTSEXAMPLE = {
   comments: [
@@ -27,10 +43,12 @@ export const COMMENTSEXAMPLE = {
 };
 
 export const CommentPage = ({ comments }) => {
+  const classes = useStyles();
   return (
-    <Grid container spacing={2} direction='column'>
+    <Grid container spacing={2} direction='column' md={9} className={classes.commentStyle}>
+      <Blog />
       {comments.map((comment, index) => (
-        <Grid item>
+        <Grid item className={classes.adaptivityComment}>
           <Comment key={index} {...comment} />
         </Grid>
       ))}

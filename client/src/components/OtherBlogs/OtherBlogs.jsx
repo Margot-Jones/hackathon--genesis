@@ -68,7 +68,6 @@ export const OtherBlogs = ({ blogs }) => {
     <div style={{color: 'white'}}>
       <Typography variant='h4'>Look at other blogs</Typography>
       <hr />
-      <Divider />
       {blogs.map((blog) => (
         <FollowBlog {...blog} />
       ))}
