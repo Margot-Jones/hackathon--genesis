@@ -3,9 +3,11 @@ import { Comment } from './Comment';
 import { makeStyles } from '@material-ui/core/styles';
 
 import {
+  Divider,
   Grid,
 } from '@material-ui/core';
 import { Blog } from '../Blog';
+import { Post, POSTEXAMPLE } from '../BlogBlock/Post';
 
 
 
@@ -20,9 +22,13 @@ export const COMMENTEXAMPLE = {
 const useStyles = makeStyles({
   commentStyle: {
     height: 'auto',
-    backgroundColor: 'grey',
-    margin: '0 auto'
+    backgroundColor: 'white',
+    margin: '20px auto',
+    paddingTop: '20px'
   },
+  divider: {
+    marginTop: '20px'
+  }
   // adaptivityComment: {
   //   '@media (max-width: 984px)': {
   //     marginBottom: '500px'
@@ -45,13 +51,16 @@ export const COMMENTSEXAMPLE = {
 export const CommentPage = ({ comments }) => {
   const classes = useStyles();
   return (
-    <Grid container spacing={2} direction='column' md={9} className={classes.commentStyle}>
-      <Blog />
-      {comments.map((comment, index) => (
-        <Grid item className={classes.adaptivityComment}>
-          <Comment key={index} {...comment} />
-        </Grid>
-      ))}
+    <Grid container spacing={5} direction='column' md={9} className={classes.commentStyle}>
+      <Post {...POSTEXAMPLE} className={classes.post}/>
+      <Divider className={classes.divider} />
+      <Grid container item spacing={1} direction='column'>
+        {comments.map((comment, index) => (
+          <Grid item className={classes.adaptivityComment}>
+            <Comment key={index} {...comment} />
+          </Grid>
+        ))}
+      </Grid>
     </Grid>
   );
 };

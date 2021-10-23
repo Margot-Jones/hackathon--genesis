@@ -52,6 +52,11 @@ const Navbar = () => {
             <PublicIcon htmlColor="#EBEBEB" fontSize="large" />
           </NavLink>
         </div>
+        <div className={s.item}>
+          <NavLink to="/comment" activeClassName={s.activeLink}>
+            <PublicIcon htmlColor="#EBEBEB" fontSize="large" />
+          </NavLink>
+        </div>
 
       </Toolbar>
   );
