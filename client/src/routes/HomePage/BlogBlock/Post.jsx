@@ -7,7 +7,18 @@ import {
   CardContent,
   Typography,
   Avatar,
+  Button
 } from '@material-ui/core';
+
+import {exportToCsv, exportToJson} from '../../../helpers';
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  button: {
+    background: '#F6AA1C',
+    color: '#fff'
+  }
+});
 
 export const POSTEXAMPLE = {
   date: '23.10.2021',
@@ -32,6 +43,16 @@ export const UserAvatar = ({ avatar }) => {
 
 export const PostBody = ({ title, image, authorData, content, date=(new Date()) }) => {
   date = (new Date());
+    const classes = useStyles();
+
+    const exportDataToJson = () => {
+        exportToJson({ title, image, authorData, content, date });
+    };
+
+    const exportDataToCsv = () => {
+        exportToCsv({ title, image, authorData, content, date });
+    };
+
   return (
     <Card style={{flex: 1}}>
       <CardActionArea>
@@ -68,6 +89,8 @@ export const PostBody = ({ title, image, authorData, content, date=(new Date()) 
           <Typography variant="body2" color="text.secondary" style={{ fontFamily: "Rosarivo" }}>
             {content}
           </Typography>
+          <Button className={classes.button} style={{ fontFamily: "Rosarivo", marginRight: "10px" }} variant="contained" size="small" onClick={exportDataToJson}>Export to JSON</Button>
+          <Button className={classes.button} style={{ fontFamily: "Rosarivo" }} variant="contained" size="small" onClick={exportDataToCsv}>Export to CSV</Button>
         </CardContent>
       </CardActionArea>
     </Card>
