@@ -49,6 +49,7 @@ export const AddComment = () => {
     return (
         <Grid className={classes.mainContent} position="static">
             <TextField
+                style={{ fontFamily: "Rosarivo" }}
                 className={classes.textField}
                 id="add-new-post"
                 label="Add new post"
@@ -61,7 +62,7 @@ export const AddComment = () => {
                 }}
                 maxRows={4}
                     />
-            <Button variant="contained" size="small" className={classes.buttonAdd}>Add</Button>
+            <Button style={{ fontFamily: "Rosarivo" }} variant="contained" size="small" className={classes.buttonAdd}>Add</Button>
 
         </ Grid>
     )

@@ -42,13 +42,13 @@ export const PostBody = ({ title, image, authorData, content, date }) => {
               alignItems: "center",
             }}
           >
-            <Typography variant="h6">
+            <Typography variant="h6" style={{ fontFamily: "Rosarivo" }}>
               <b>{authorData}</b>
             </Typography>
             <Typography
               variant="subtitle2"
               align="right"
-              style={{ flex: 1, color: "grey" }}
+              style={{ flex: 1, color: "grey", fontFamily: "Rosarivo" }}
             >
               {date}
             </Typography>
@@ -61,10 +61,10 @@ export const PostBody = ({ title, image, authorData, content, date }) => {
           alt="post image"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" style={{ fontFamily: "Rosarivo" }}>
             {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary" style={{ fontFamily: "Rosarivo" }}>
             {content}
           </Typography>
         </CardContent>
