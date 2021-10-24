@@ -22,7 +22,7 @@ const commentsReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetchingPending: false,
-        posts: action.payload
+        posts: action.payload.posts
       };
     case actionTypes.FETCH_POSTS_ERROR:
       return {
