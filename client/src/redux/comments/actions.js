@@ -16,6 +16,13 @@ export const fetchComments = (postId, token) => async dispatch => {
       headers: { 'Authorization': `Bearer ${token}` }
     })
 
+    const p = await res.data.comments.map((comment, index) => ({
+      ...comment,
+      date: new Date(),
+    }));
+
+    console.log(p);
+
     dispatch(fetchCommentsComplete(res.data.comments))
   } catch (err) {
     dispatch(fetchCommentsSetError())

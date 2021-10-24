@@ -11,13 +11,13 @@ import {
 
 export const POSTEXAMPLE = {
   date: '23.10.2021',
-  author: 'tentacion1999',
+  authorData: 'tentacion1999',
   avatar:
     'https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=869&q=80',
   title: 'Lizard',
   image:
     'https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=869&q=80',
-  text: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
+  content: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
 };
 
 export const UserAvatar = ({ avatar }) => {
@@ -31,6 +31,7 @@ export const UserAvatar = ({ avatar }) => {
 };
 
 export const PostBody = ({ title, image, authorData, content, date=(new Date()) }) => {
+  date = (new Date());
   return (
     <Card style={{flex: 1}}>
       <CardActionArea>
