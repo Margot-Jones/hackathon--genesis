@@ -3,6 +3,7 @@ import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { BLOGSEXAMPLE, OtherBlogs } from './OtherBlogs/OtherBlogs';
 import { Post, POSTEXAMPLE } from './BlogBlock/Post';
+import { AddComment } from '../../components/AddComment';
 
 const useStyles = makeStyles({
   mainContent: {
@@ -39,6 +40,7 @@ const HomePagePresenter = ({posts=[], isLoading, isError}) => {
   }
 
   return <>
+    <AddComment />
     <Grid className={classes.mainContent} position="static">
         <Grid className={classes.blockPost} md={6} sm={8} xs={10}>
           {posts.map((post) => <Post post={post}/>)}
