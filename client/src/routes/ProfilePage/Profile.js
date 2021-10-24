@@ -1,10 +1,8 @@
 import React from "react";
-import { POSTEXAMPLE } from "../BlogBlock/Post";
-import { USER, UserInfo } from "../UserInfo/UserInfo";
-import { Post } from "../BlogBlock/Post";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-
+import { Post, POSTEXAMPLE } from "../HomePage/BlogBlock/Post";
+import { UserInfo, USER } from './UserInfo/UserInfo'
 const POSTS = [POSTEXAMPLE, POSTEXAMPLE, POSTEXAMPLE];
 
 const useStyles = makeStyles({
