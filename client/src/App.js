@@ -17,7 +17,7 @@ function App() {
           />
           <Route path = '/comment/:postId' component={CommentsPage}
           />
-          <Route path='/' component={HomePage}/>
+          <Route path='/' component={HomePage} exact/>
         </main>
       </div>
     </BrowserRouter>

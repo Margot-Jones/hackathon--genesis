@@ -30,7 +30,7 @@ export const UserAvatar = ({ avatar }) => {
   );
 };
 
-export const PostBody = ({ date, author, avatar, title, image, text }) => {
+export const PostBody = ({ title, thumbnailUrl, authorData, content, date, avatar }) => {
   return (
     <Card>
       <CardActionArea>
@@ -43,7 +43,7 @@ export const PostBody = ({ date, author, avatar, title, image, text }) => {
             }}
           >
             <Typography variant="h6">
-              <b>{author}</b>
+              <b>{authorData}</b>
             </Typography>
             <Typography
               variant="subtitle2"
@@ -57,7 +57,7 @@ export const PostBody = ({ date, author, avatar, title, image, text }) => {
         <CardMedia
           component="img"
           height="200"
-          image={image}
+          image={thumbnailUrl}
           alt="post image"
         />
         <CardContent>
@@ -65,7 +65,7 @@ export const PostBody = ({ date, author, avatar, title, image, text }) => {
             {title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {text}
+            {content}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -73,13 +73,13 @@ export const PostBody = ({ date, author, avatar, title, image, text }) => {
   );
 };
 
-export const Post = ({ date, author, avatar, title, image, text }) => {
+export const Post = ({ title, thumbnailUrl, authorData, content, date, avatar }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row', margin: '0 auto' }}>
       <div style={{ marginRight: 20 }}>
         <Avatar sx={{ bgcolor: 'red' }} aria-label='avatar' src={avatar} />
       </div>
-      <PostBody {...{date: date, author: author, title: title, image: image, text: text}} />
+      <PostBody date={date} author={authorData} title={title} image={thumbnailUrl} text={content} />
     </div>
   );
 };

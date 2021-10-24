@@ -38,7 +38,7 @@ const Navbar = () => {
         </div>
 
         <div className={s.item}>
-          <NavLink to="/blog" activeClassName={s.activeLink}>
+          <NavLink to="/" activeClassName={s.activeLink}>
             <ReceiptOutlinedIcon htmlColor="#EBEBEB" fontSize="large" />
           </NavLink>
         </div>
