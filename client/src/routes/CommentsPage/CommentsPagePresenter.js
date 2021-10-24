@@ -1,5 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { CommentPage, COMMENTSEXAMPLE } from './CommentPage'
 
-const CommentsPagePresenter = () => <></>
+const CommentsPagePresenter = () => <>
+  <CommentPage {...COMMENTSEXAMPLE} />
+</>
 
 export default CommentsPagePresenter
