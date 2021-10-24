@@ -44,7 +44,7 @@ const Navbar = () => {
         </div>
         
         <div className={s.item}>
-          <NavLink to="/comment" activeClassName={s.activeLink}>
+          <NavLink to="/comment/2" activeClassName={s.activeLink}>
             <CommentOutlined htmlColor="#EBEBEB" fontSize="large" />
           </NavLink>
         </div>

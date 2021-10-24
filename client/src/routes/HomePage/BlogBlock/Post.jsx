@@ -30,7 +30,7 @@ export const UserAvatar = ({ avatar }) => {
   );
 };
 
-export const PostBody = ({ title, image, authorData, content, date }) => {
+export const PostBody = ({ title, image, authorData, content, date=(new Date()) }) => {
   return (
     <Card style={{flex: 1}}>
       <CardActionArea>

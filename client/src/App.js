@@ -14,7 +14,7 @@ function App() {
         <main>
           <Route path = '/profile/' component={ProfilePage}
           />
-          <Route path = '/comment/:postId' component={CommentsPage} />
+          <Route path = '/comment/2' component={CommentsPage} />
           <Route path = '/create' component={PostFormPage} />
           <Route path = '/edit/:postId' component={PostFormPage} />
           <Route path='/' component={HomePage} exact/>

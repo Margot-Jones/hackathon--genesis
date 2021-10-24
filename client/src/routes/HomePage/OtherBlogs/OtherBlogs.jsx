@@ -48,7 +48,7 @@ const FollowBlog = ({ avatar, name }) => {
       <Avatar aria-label='avatar' src={avatar} />
       <Grid item direction='column' className={classes.nameStatus}>
         <Typography style={{ fontFamily: "Rosarivo" }}><b>{name}</b></Typography>
-        <p style={{fontWeight: '200', margin: '0'}}>status</p>
+        <p style={{fontWeight: '200', margin: '0'}}>for your smile</p>
       </Grid>
       <Grid container direction='row-reverse' className={classes.follow}>
         <Button
