@@ -55,8 +55,8 @@ const FollowBlog = ({ avatar, name }) => {
           onClick={() => {
             setFollow(!followed);
           }}
-        style={{color: '#B51F60'}}>
-          {followed ? 'Follow' : 'Unfollow'}
+        style={{color: '#F6AA1C'}}>
+          {followed ? <b>Follow</b> : <b>Unfollow</b>}
         </Button>
       </Grid>
     </Grid>
