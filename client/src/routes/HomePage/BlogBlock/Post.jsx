@@ -32,7 +32,7 @@ export const UserAvatar = ({ avatar }) => {
 
 export const PostBody = ({ title, image, authorData, content, date }) => {
   return (
-    <Card>
+    <Card style={{flex: 1}}>
       <CardActionArea>
         <CardContent>
           <div
@@ -77,7 +77,7 @@ export const Post = ({ post }) => {
   const { title, thumbnailUrl, authorData, content, date, avatar } = post
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', margin: '0 auto' }}>
+    <div style={{ display: 'flex', flexDirection: 'row', margin: '0 auto', flex: 1}}>
       <div style={{ marginRight: 20 }}>
         <Avatar sx={{ bgcolor: 'red' }} aria-label='avatar' src={avatar} />
       </div>
