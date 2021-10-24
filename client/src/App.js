@@ -1,16 +1,22 @@
 import Header from './components/Header/Header';
-import Profile from './components/Profile/Profile';
-import Login from './components/Login/Login';
-import { Blog } from './components/Blog';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { HomePage } from './routes/HomePage'
+import { CommentsPage } from './routes/CommentsPage';
+import { HomePage } from './routes/HomePage';
+import { ProfilePage } from './routes/ProfilePage';
+
+
 
 function App() {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
       <Header />
+      {/* <CommentPage {...COMMENTSEXAMPLE} /> */}
         <main>
+          <Route path = '/profile/' component={ProfilePage}
+          />
+          <Route path = '/comment/:postId' component={CommentsPage}
+          />
           <Route path='/' component={HomePage}/>
         </main>
       </div>

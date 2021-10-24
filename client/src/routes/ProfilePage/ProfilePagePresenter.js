@@ -1,5 +1,8 @@
-import React from 'react'
+import React from 'react';
+import Profile from './Profile';
 
-const ProfilePagePresenter = () => <></>
+const ProfilePagePresenter = () => <>
+  <Profile />
+</>
 
 export default ProfilePagePresenter
