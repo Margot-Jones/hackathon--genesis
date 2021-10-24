@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const path = require('path');
+const cors = require('cors')
 
 require('./models/Post')
 require('./models/Comment')
@@ -39,6 +40,7 @@ db.once('open', function () {
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+app.use(cors())
 
 app.get('*', (req, res) =>
   res.sendFile('../../client/build/index.html'))
