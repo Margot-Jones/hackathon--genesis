@@ -2,7 +2,7 @@ import React from 'react';
 
 import { TextField, InputAdornment, Button, Grid, IconButton, Avatar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import addFile from '../../assets/img/add-file-post.png'
+import file from '../../assets/img/add-file-post.png'
 
 const useStyles = makeStyles({
     mainContent: {
@@ -32,6 +32,20 @@ const useStyles = makeStyles({
 export const AddComment = () => {
     const classes = useStyles();
 
+    const addFile = () => {
+        console.log('hello');
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.click();
+
+
+        input.onchange = e => {
+            // getting a hold of the file reference
+            const file = e.target.files[0];
+
+        }
+    };
+
     return (
         <Grid className={classes.mainContent} position="static">
             <TextField
@@ -42,7 +56,7 @@ export const AddComment = () => {
                 size="small"
                 variant="outlined"
                 InputProps={{
-                    endAdornment: <InputAdornment position="end"><IconButton ><img src={addFile}  alt="add file" />
+                    endAdornment: <InputAdornment position="end"><IconButton onClick = {addFile}><img src={file}  alt="add file" />
                         </IconButton></InputAdornment>,
                 }}
                 maxRows={4}
