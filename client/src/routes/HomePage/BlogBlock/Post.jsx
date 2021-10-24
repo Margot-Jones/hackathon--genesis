@@ -20,7 +20,58 @@ export const POSTEXAMPLE = {
   text: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
 };
 
+export const UserAvatar = ({ avatar }) => {
+  return (
+    <Avatar
+      style={{ width: 80, height: 80 }}
+      aria-label="avatar"
+      src={avatar}
+    />
+  );
+};
 
+export const PostBody = ({ date, author, title, image, text }) => {
+  return (
+    <Card>
+      <CardActionArea>
+        <CardContent>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <Typography variant="h6">
+              <b>{author}</b>
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              align="right"
+              style={{ flex: 1, color: "grey" }}
+            >
+              {date}
+            </Typography>
+          </div>
+        </CardContent>
+        <CardMedia
+          component="img"
+          height="200"
+          image={image}
+          alt="post image"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {text}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  );
+};
 
 export const Post = ({ date, author, avatar, title, image, text }) => {
   return (
@@ -28,44 +79,7 @@ export const Post = ({ date, author, avatar, title, image, text }) => {
       <div style={{ marginRight: 20 }}>
         <Avatar sx={{ bgcolor: 'red' }} aria-label='avatar' src={avatar} />
       </div>
-      <div>
-        <Card>
-          <CardActionArea>
-            <CardContent>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center'
-                }}
-              >
-                <Typography variant='h6'><b>{author}</b></Typography>
-                <Typography
-                  variant='subtitle2'
-                  align='right'
-                  style={{ flex: 1, color: 'grey' }}
-                >
-                  {date}
-                </Typography>
-              </div>
-            </CardContent>
-            <CardMedia
-              component='img'
-              height='200'
-              image={image}
-              alt='post image'
-            />
-            <CardContent>
-              <Typography gutterBottom variant='h5' component='div'>
-                {title}
-              </Typography>
-              <Typography variant='body2' color='text.secondary'>
-                {text}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-      </div>
+      <PostBody {...{date: date, author: author, title: title, image: image, text: text}} />
     </div>
   );
 };
