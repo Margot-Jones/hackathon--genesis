@@ -4,12 +4,10 @@ import { CommentsPage } from './routes/CommentsPage';
 import { HomePage } from './routes/HomePage';
 import { ProfilePage } from './routes/ProfilePage';
 
-
-
 function App() {
   return (
     <BrowserRouter>
-      <div className='app-wrapper'>
+      <div className='app-wrapper' style={{ fontFamily: "Rosarivo" }}>
       <Header />
       {/* <CommentPage {...COMMENTSEXAMPLE} /> */}
         <main>
