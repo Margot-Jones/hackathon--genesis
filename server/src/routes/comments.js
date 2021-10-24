@@ -15,21 +15,23 @@ router.post('/:id', checkJwt, async (req, res) => {
     })
   }
 
-  const newComment = new Comment({
-    ...req.body,
-    authorId: req.user.sub
-  })
+  console.log(req)
 
-  const savedComment = await newComment.save()
-
-  await Post.findByIdAndUpdate(req.params.id, { $push: { comments: savedComment._id } })
-
-  res.json({ comment: savedComment })
+  // const newComment = new Comment({
+  //   ...req.body,
+  //   authorId: req.user.sub
+  // })
+  //
+  // const savedComment = await newComment.save()
+  //
+  // await Post.findByIdAndUpdate(req.params.id, { $push: { comments: savedComment._id } })
+  //
+  // res.json({ comment: savedComment })
 })
 
 // GET api/comments/:postId
 router.get('/:postId', async (req, res) => {
-  const comments = await Comment.find({ postId: req.params.postId }).populate({ path: 'post', model: Post }).exec()
+  const comments = await Comment.find({ postId: req.params.postId })
 
   console.log(req.params.postId)
 
