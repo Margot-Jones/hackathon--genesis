@@ -47,7 +47,7 @@ const FollowBlog = ({ avatar, name }) => {
     <Grid container className={classes.mainContainer}>
       <Avatar aria-label='avatar' src={avatar} />
       <Grid item direction='column' className={classes.nameStatus}>
-        <Typography><b>{name}</b></Typography>
+        <Typography style={{ fontFamily: "Rosarivo" }}><b>{name}</b></Typography>
         <p style={{fontWeight: '200', margin: '0'}}>status</p>
       </Grid>
       <Grid container direction='row-reverse' className={classes.follow}>
@@ -66,7 +66,7 @@ const FollowBlog = ({ avatar, name }) => {
 export const OtherBlogs = ({ blogs }) => {
   return (
     <div style={{color: 'white'}}>
-      <Typography variant='h4'>Look at other blogs</Typography>
+      <Typography style={{ fontFamily: "Rosarivo" }} variant='h4'>Look at other blogs</Typography>
       <hr />
       {blogs.map((blog) => (
         <FollowBlog {...blog} />
