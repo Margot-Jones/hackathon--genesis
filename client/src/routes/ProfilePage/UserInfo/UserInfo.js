@@ -44,6 +44,7 @@ export const UserInfo = ({avatar, username, info}) => {
         <CardMedia component="img" src={avatar} height="281" />
         <CardContent className={classes.cardContent}>
           <Typography
+            style={{ fontFamily: "Rosarivo" }}
             gutterBottom
             variant="h5"
             component="div"
@@ -53,6 +54,7 @@ export const UserInfo = ({avatar, username, info}) => {
             <b>{username}</b>
           </Typography>
           <Typography
+            style={{ fontFamily: "Rosarivo" }}
             variant="body2"
             color="text.secondary"
             align="center"

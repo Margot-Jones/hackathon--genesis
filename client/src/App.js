@@ -5,12 +5,10 @@ import { HomePage } from './routes/HomePage';
 import { ProfilePage } from './routes/ProfilePage';
 import {PostFormPage} from "./routes/PostFormPage";
 
-
-
 function App() {
   return (
     <BrowserRouter>
-      <div className='app-wrapper'>
+      <div className='app-wrapper' style={{ fontFamily: "Rosarivo" }}>
       <Header />
       {/* <CommentPage {...COMMENTSEXAMPLE} /> */}
         <main>

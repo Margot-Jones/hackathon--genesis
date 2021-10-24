@@ -30,9 +30,9 @@ export const UserAvatar = ({ avatar }) => {
   );
 };
 
-export const PostBody = ({ title, thumbnailUrl, authorData, content, date, avatar }) => {
+export const PostBody = ({ title, image, authorData, content, date }) => {
   return (
-    <Card>
+    <Card style={{flex: 1}}>
       <CardActionArea>
         <CardContent>
           <div
@@ -42,13 +42,13 @@ export const PostBody = ({ title, thumbnailUrl, authorData, content, date, avata
               alignItems: "center",
             }}
           >
-            <Typography variant="h6">
+            <Typography variant="h6" style={{ fontFamily: "Rosarivo" }}>
               <b>{authorData}</b>
             </Typography>
             <Typography
               variant="subtitle2"
               align="right"
-              style={{ flex: 1, color: "grey" }}
+              style={{ flex: 1, color: "grey", fontFamily: "Rosarivo" }}
             >
               {date}
             </Typography>
@@ -57,14 +57,14 @@ export const PostBody = ({ title, thumbnailUrl, authorData, content, date, avata
         <CardMedia
           component="img"
           height="200"
-          image={thumbnailUrl}
+          image={image}
           alt="post image"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" style={{ fontFamily: "Rosarivo" }}>
             {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary" style={{ fontFamily: "Rosarivo" }}>
             {content}
           </Typography>
         </CardContent>
@@ -73,9 +73,11 @@ export const PostBody = ({ title, thumbnailUrl, authorData, content, date, avata
   );
 };
 
-export const Post = ({ title, thumbnailUrl, authorData, content, date, avatar }) => {
+export const Post = ({ post }) => {
+  const { title, thumbnailUrl, authorData, content, date, avatar } = post
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', margin: '0 auto' }}>
+    <div style={{ display: 'flex', flexDirection: 'row', margin: '0 auto', flex: 1}}>
       <div style={{ marginRight: 20 }}>
         <Avatar sx={{ bgcolor: 'red' }} aria-label='avatar' src={avatar} />
       </div>

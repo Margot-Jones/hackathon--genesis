@@ -52,6 +52,7 @@ const Header = () => {
 
       <Grid className={s.loginBlock} md={1} sm={2} xs={2}>
           <button
+            style={{ fontFamily: "Rosarivo" }}
             onClick={isAuthenticated ? logout : loginWithRedirect}
             className={isAuthenticated ? s.buttonLogOut : s.buttonLogIn}
           >
