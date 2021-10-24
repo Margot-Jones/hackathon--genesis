@@ -27,20 +27,20 @@ const useStyles = makeStyles({
   },
 });
 
-const Profile = ({ posts } = {}) => {
-  posts = POSTS;
+const Profile = ({ posts, user } = {}) => {
   const classes = useStyles();
   return (
     <>
       <Grid className={classes.mainContent} position="static">
         <Grid className={classes.blockPost} md={4} sm={8} xs={10}>
-          <UserInfo {...USER} />
+          <UserInfo avatar={user.picture} username={user.name}  />
         </Grid>
         <Grid className={classes.blockUsers} md={6} sm={8} xs={10}>
+
           <Grid container spacing={2} direction='column'>
             {posts.map((post, index) => (
               <Grid item>
-                <Post key={index} {...post} />
+                <Post post={post} avatar={user.picture} key={post._id} {...post} />
               </Grid>
             ))}
           </Grid>

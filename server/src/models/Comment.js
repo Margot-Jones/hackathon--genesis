@@ -4,10 +4,10 @@ const Schema = mongoose.Schema
 const CommentSchema = new Schema({
   content: String,
   authorId: String,
-  post: {
-    type: Schema.Types.ObjectId,
-    ref: 'post'
+  author: {
+    name: String,
+    avatarUrl: String
   }
-})
+}, { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }})
 
 module.exports = Comment = mongoose.model('comment', CommentSchema)
