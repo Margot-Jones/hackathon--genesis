@@ -28,20 +28,8 @@ const useStyles = makeStyles({
     }
 });
 
-export const POSTEXAMPLE = {
-    date: '23.10.2021',
-    author: 'tentacion1999',
-    avatar:
-        'https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=869&q=80',
-    title: 'Lizard',
-    image:
-        'https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=869&q=80',
-    text: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-};
 
-
-
-export const AddComment = ({ avatar }) => {
+export const AddComment = () => {
     const classes = useStyles();
 
     return (
@@ -51,6 +39,7 @@ export const AddComment = ({ avatar }) => {
                 id="add-new-post"
                 label="Add new post"
                 multiline
+                size="small"
                 variant="outlined"
                 InputProps={{
                     endAdornment: <InputAdornment position="end"><IconButton ><img src={addFile}  alt="add file" />
