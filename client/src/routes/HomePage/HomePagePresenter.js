@@ -47,13 +47,15 @@ const HomePagePresenter = ({posts=[], isLoading, isError}) => {
 
   return <>
     <Grid className={classes.mainContent} position="static">
-      <Grid container position="static" md={6} className={classes.AddComment}>
-          <AddComment />
-          <SortToggler />
-        <Grid container className={classes.blockPost} md={8} sm={8} xs={10}>
+      <Grid container position="static" md={6} sm={10} xs={10} className={classes.AddComment}>
+        <Grid item container md={12} style ={{justifyContent: 'center'}}>
+          <Grid item md={8}><AddComment /></Grid>
+          <Grid item md={4}><SortToggler /></Grid>
+        </Grid>
+        <Grid item container className={classes.blockPost} xs={12} spacing={2}>
           {posts.map((post) => <Grid item xs={12}><Post post={post}/></Grid>)}
         </Grid>
-        </Grid>
+      </Grid>
         <Grid container className={classes.blockUsers} md={3} sm={8} xs={10}>
             <OtherBlogs {...{blogs: BLOGSEXAMPLE}} />
         </Grid>
