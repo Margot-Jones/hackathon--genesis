@@ -55,15 +55,15 @@ export const SortByAlphabet = ({ active, descending, onClick }) => {
   );
 };
 
-export const SortToggler = () => {
-  const [sortBy, setSortBy] = useState("date");
-  const [descending, setDescending] = useState(false);
+export const SortToggler = ({sortBy, setSortBy, descending, setDescending, setSortFunc}) => {
 
   const changeSort = (name) => {
     if (name === sortBy) {
       setDescending(!descending);
+      setSortFunc(name+!descending);
     } else {
       setSortBy(name);
+      setSortFunc(name+descending)
     }
   };
 

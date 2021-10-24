@@ -21,7 +21,7 @@ export const fetchPosts = () => async (dispatch) => {
   try {
     const res = await axios.get(POSTS_URL);
     const otherData = [
-      { authorData: "browngorilla163", avatar: "https://randomuser.me/api/portraits/med/men/69.jpg", date: new Date(Date.UTC(2021, 1, 12, 3, 0, 0)) },
+      { authorData: "browngorilla163", avatar: "https://randomuser.me/api/portraits/med/men/69.jpg", date: new Date() },
       { authorData: "Parker", avatar: "https://randomuser.me/api/portraits/med/men/93.jpg", date: new Date(Date.UTC(2020, 10, 5, 3, 0, 0)) },
       { authorData: "Leila8", avatar: "https://randomuser.me/api/portraits/med/women/93.jpg", date: new Date(Date.UTC(2018, 9, 5, 3, 0, 0)) },
       { authorData: "Cunningham", avatar: "https://randomuser.me/api/portraits/men/89.jpg", date: new Date(Date.UTC(2020, 6, 15, 3, 0, 0)) },
