@@ -13,12 +13,11 @@ function App() {
       <Header />
       {/* <CommentPage {...COMMENTSEXAMPLE} /> */}
         <main>
-          <Route path = '/profile/' component={ProfilePage} 
-          />
-          <Route path = '/blog' component={HomePage}
+          <Route path = '/profile/' component={ProfilePage}
           />
           <Route path = '/comment/:postId' component={CommentsPage}
           />
+          <Route path='/' component={HomePage}/>
         </main>
       </div>
     </BrowserRouter>
