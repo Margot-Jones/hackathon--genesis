@@ -3,32 +3,15 @@ import Profile from './components/Profile/Profile';
 import Login from './components/Login/Login';
 import { Blog } from './components/Blog';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { CommentPage, COMMENTSEXAMPLE } from './components/Comments/CommentPage';
-
+import { HomePage } from './routes/HomePage'
 
 function App() {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
       <Header />
-      {/* <CommentPage {...COMMENTSEXAMPLE} /> */}
         <main>
-          <Route path = '/profile/' 
-            render={ () => <Profile /> 
-            }
-          />
-          <Route path = '/blog' 
-            render={ () => <Blog />
-            }
-          />
-          <Route path = '/login' 
-            render={ () => <Login />
-          }
-          />
-          <Route path = '/comment/' 
-            render={ () => <CommentPage {...COMMENTSEXAMPLE} /> 
-            }
-          />
+          <Route path='/' component={HomePage}/>
         </main>
       </div>
     </BrowserRouter>

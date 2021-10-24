@@ -1,5 +1,5 @@
 import { FETCH_COMMENTS_COMPLETED, FETCH_COMMENTS_ERROR, FETCH_COMMENTS_INIT } from "./constants";
-import {BASE_API_URL, COMMENTS} from "../../constants";
+import { COMMENTS_URL } from "../../constants";
 import axios from "axios";
 
 const fetchCommentsInit = () => ({ type: FETCH_COMMENTS_INIT })
@@ -12,7 +12,7 @@ export const fetchComments = (postId, token) => async dispatch => {
   dispatch(fetchCommentsInit())
 
   try {
-    const res = await axios.get(`${COMMENTS}/${postId}`, {
+    const res = await axios.get(`${COMMENTS_URL}/${postId}`, {
       headers: { 'Authorization': `Bearer ${token}` }
     })
 
