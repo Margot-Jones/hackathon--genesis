@@ -40,7 +40,13 @@ db.once('open', function () {
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.use(cors())
+
+const corsOptions = {
+  origin: ["http://localhost:3000", "https://team-fire-blog.herokuapp.com"],
+  optionsSuccessStatus: 200 // For legacy browser support
+}
+
+app.use(cors(corsOptions))
 
 app.use('/api', routes)
 app.get('*', (req, res) =>
