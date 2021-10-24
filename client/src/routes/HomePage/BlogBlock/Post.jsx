@@ -30,7 +30,7 @@ export const UserAvatar = ({ avatar }) => {
   );
 };
 
-export const PostBody = ({ title, thumbnailUrl, authorData, content, date, avatar }) => {
+export const PostBody = ({ title, image, authorData, content, date }) => {
   return (
     <Card>
       <CardActionArea>
@@ -57,7 +57,7 @@ export const PostBody = ({ title, thumbnailUrl, authorData, content, date, avata
         <CardMedia
           component="img"
           height="200"
-          image={thumbnailUrl}
+          image={image}
           alt="post image"
         />
         <CardContent>
@@ -73,7 +73,9 @@ export const PostBody = ({ title, thumbnailUrl, authorData, content, date, avata
   );
 };
 
-export const Post = ({ title, thumbnailUrl, authorData, content, date, avatar }) => {
+export const Post = ({ post }) => {
+  const { title, thumbnailUrl, authorData, content, date, avatar } = post
+
   return (
     <div style={{ display: 'flex', flexDirection: 'row', margin: '0 auto' }}>
       <div style={{ marginRight: 20 }}>
