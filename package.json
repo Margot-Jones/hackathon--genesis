@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/Margot-Jones/hackathon-genesis/issues"
   },
-  "homepage": "https://github.com/Margot-Jones/hackathon-genesis#readme"
+  "homepage": "https://github.com/Margot-Jones/hackathon-genesis#readme",
+  "proxy": "https://team-fire-blog.herokuapp.com"
 }
