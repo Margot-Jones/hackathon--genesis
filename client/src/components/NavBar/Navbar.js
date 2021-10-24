@@ -4,7 +4,8 @@ import { NavLink } from 'react-router-dom';
 import s from './Navbar.module.css';
 import { makeStyles } from '@material-ui/core/styles';
 import PublicIcon from '@material-ui/icons/Public';
-import MailOutlineOutlinedIcon from '@material-ui/icons/MailOutlineOutlined';
+import CommentOutlined from '@material-ui/icons/CommentOutlined';
+import ReceiptOutlinedIcon from '@material-ui/icons/ReceiptOutlined';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 
 
@@ -38,7 +39,7 @@ const Navbar = () => {
 
         <div className={s.item}>
           <NavLink to="/blog" activeClassName={s.activeLink}>
-            <MailOutlineOutlinedIcon htmlColor="#EBEBEB" fontSize="large" />
+            <ReceiptOutlinedIcon htmlColor="#EBEBEB" fontSize="large" />
           </NavLink>
         </div>
 
@@ -50,7 +51,7 @@ const Navbar = () => {
         
         <div className={s.item}>
           <NavLink to="/comment" activeClassName={s.activeLink}>
-            <PublicIcon htmlColor="#EBEBEB" fontSize="large" />
+            <CommentOutlined htmlColor="#EBEBEB" fontSize="large" />
           </NavLink>
         </div>
 
