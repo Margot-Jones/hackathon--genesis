@@ -65,7 +65,7 @@ const FollowBlog = ({ avatar, name }) => {
 
 export const OtherBlogs = ({ blogs }) => {
   return (
-    <div style={{color: 'white'}}>
+    <div style={{color: 'white', position: 'fixed'}}>
       <Typography variant='h4'>Look at other blogs</Typography>
       <hr />
       {blogs.map((blog) => (

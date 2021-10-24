@@ -11,12 +11,14 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   userName: {
-    margin: "20px 0",
-    fontSize: "30px",
+    margin: "10px 0",
+    fontSize: "20px",
+    borderRadius: '20px'
   },
 
   card: {
-    backgroundColor: "#1C0D1C",
+    backgroundColor: "#941B0C",
+    // position: 'fixed'
   },
 
   cardContent: {
@@ -24,7 +26,8 @@ const useStyles = makeStyles({
   },
 
   userDesc: {
-    fontSize: "20px",
+    fontSize: "13px",
+    marginBottom: "10px"
   },
 });
 
@@ -47,7 +50,7 @@ export const UserInfo = ({avatar, username, info}) => {
             align="center"
             className={classes.userName}
           >
-            {username}
+            <b>{username}</b>
           </Typography>
           <Typography
             variant="body2"
