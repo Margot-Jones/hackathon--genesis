@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { BLOGSEXAMPLE, OtherBlogs } from './OtherBlogs/OtherBlogs';
 import { Post, POSTEXAMPLE } from './BlogBlock/Post';
 import { AddComment } from '../../components/AddComment';
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const useStyles = makeStyles({
   mainContent: {
@@ -47,14 +48,28 @@ const HomePagePresenter = ({posts=[], isLoading, isError}) => {
     <Grid position="static" md={6} className={classes.AddComment}>
         <AddComment />
     </Grid>
-    <Grid className={classes.mainContent} position="static">
-        <Grid className={classes.blockPost} md={6} sm={8} xs={10}>
-          {posts.map((post) => <Post post={post}/>)}
-        </Grid>
-        <Grid className={classes.blockUsers} md={3} sm={8} xs={10}>
-            <OtherBlogs {...{blogs: BLOGSEXAMPLE}} />
-        </Grid>
-    </Grid>
+
+    {/* <InfiniteScroll
+      dataLength={visibleUsersCount}
+      next={fetchMoreData}
+      hasMore={visibleUsersCount <= 2 ? true : false}
+      loader={<h4>Loading...</h4>}
+      endMessage={
+        <p style={{ textAlign: "center" }}>
+          <b>Yay! You have seen it all</b>
+        </p>
+      }
+    > */}
+      <Grid className={classes.mainContent} position="static">
+          <Grid className={classes.blockPost} md={6} sm={8} xs={10}>
+            {posts.map((post) => <Post post={post}/>)}
+          </Grid>
+          <Grid className={classes.blockUsers} md={3} sm={8} xs={10}>
+              <OtherBlogs {...{blogs: BLOGSEXAMPLE}} />
+          </Grid>
+      </Grid>
+
+    {/* </InfiniteScroll> */}
   </>
 }
 
