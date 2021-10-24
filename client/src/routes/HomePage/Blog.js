@@ -1,9 +1,9 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { Post, POSTEXAMPLE } from '../BlogBlock/Post';
-import { AddComment } from '../AddComment/index';
-import { BLOGSEXAMPLE, OtherBlogs } from '../OtherBlogs/OtherBlogs';
+import { Post, POSTEXAMPLE } from './BlogBlock/Post';
+import { AddComment } from '../../components/AddComment';
+import { BLOGSEXAMPLE, OtherBlogs } from './OtherBlogs/OtherBlogs';
 
 const useStyles = makeStyles({
     mainContent: {
