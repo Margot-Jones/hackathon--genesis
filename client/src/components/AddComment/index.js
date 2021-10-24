@@ -52,7 +52,7 @@ export const AddComment = () => {
                 style={{ fontFamily: "Rosarivo" }}
                 className={classes.textField}
                 id="add-new-post"
-                label="Add new post"
+                label="Typing..."
                 multiline
                 size="small"
                 variant="outlined"
@@ -62,7 +62,7 @@ export const AddComment = () => {
                 }}
                 maxRows={4}
                     />
-            <Button style={{ fontFamily: "Rosarivo" }} variant="contained" size="small" className={classes.buttonAdd}>Add</Button>
+            <Button style={{ fontFamily: "Rosarivo" }} variant="contained" size="small" className={classes.buttonAdd}><b>Find</b></Button>
 
         </ Grid>
     )
