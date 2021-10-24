@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   blockPost: {
       height: 'auto',
       '@media (max-width: 984px)': {
-          marginBottom: '-500px'
+          marginBottom: '-270px',
         }
   },
 
