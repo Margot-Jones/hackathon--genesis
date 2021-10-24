@@ -9,7 +9,7 @@ const useStyles = makeStyles({
         display: 'flex',
         marginBottom: '20px',
         backgroundColor: '#941B0C',
-        padding: '30px',
+        padding: '20px',
         borderRadius: '10px',
     },
 
@@ -45,26 +45,21 @@ export const AddComment = ({ avatar }) => {
     const classes = useStyles();
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <div style={{ marginRight: 20 }}>
-                <Avatar sx={{ bgcolor: 'red' }} aria-label='avatar' src={avatar} />
-            </div>
-            <Grid className={classes.mainContent} position="static">
-                <TextField
-                    className={classes.textField}
-                    id="add-new-post"
-                    label="Add new post"
-                    multiline
-                    variant="outlined"
-                    InputProps={{
-                        endAdornment: <InputAdornment position="end"><IconButton ><img src={addFile}  alt="add file" />
+        <Grid className={classes.mainContent} position="static">
+            <TextField
+                className={classes.textField}
+                id="add-new-post"
+                label="Add new post"
+                multiline
+                variant="outlined"
+                InputProps={{
+                    endAdornment: <InputAdornment position="end"><IconButton ><img src={addFile}  alt="add file" />
                         </IconButton></InputAdornment>,
-                    }}
-                    maxRows={4}
-                />
-                <Button variant="contained" size="small" className={classes.buttonAdd}>Add</Button>
+                }}
+                maxRows={4}
+                    />
+            <Button variant="contained" size="small" className={classes.buttonAdd}>Add</Button>
 
-            </ Grid>
-        </div>
+        </ Grid>
     )
 }

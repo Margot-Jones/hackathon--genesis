@@ -24,6 +24,10 @@ const useStyles = makeStyles({
         }
   },
 
+    AddComment: {
+        marginLeft: '5%'
+    },
+
   blockUsers: {
       height: 'auto'
   }
@@ -40,7 +44,9 @@ const HomePagePresenter = ({posts=[], isLoading, isError}) => {
   }
 
   return <>
-    <AddComment />
+    <Grid position="static" md={6} className={classes.AddComment}>
+        <AddComment />
+    </Grid>
     <Grid className={classes.mainContent} position="static">
         <Grid className={classes.blockPost} md={6} sm={8} xs={10}>
           {posts.map((post) => <Post post={post}/>)}
