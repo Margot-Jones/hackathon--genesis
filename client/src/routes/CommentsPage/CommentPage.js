@@ -6,8 +6,8 @@ import {
   Divider,
   Grid,
 } from '@material-ui/core';
-import { Blog } from '../Blog';
-import { Post, POSTEXAMPLE } from '../BlogBlock/Post';
+import { Post, POSTEXAMPLE } from '../HomePage/BlogBlock/Post';
+
 
 
 

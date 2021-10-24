@@ -1,9 +1,9 @@
 import Header from './components/Header/Header';
-import Profile from './components/Profile/Profile';
-import Login from './components/Login/Login';
-import { Blog } from './components/Blog';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { CommentPage, COMMENTSEXAMPLE } from './components/Comments/CommentPage';
+import { CommentsPage } from './routes/CommentsPage';
+import { HomePage } from './routes/HomePage';
+import { ProfilePage } from './routes/ProfilePage';
+
 
 
 function App() {
@@ -13,22 +13,11 @@ function App() {
       <Header />
       {/* <CommentPage {...COMMENTSEXAMPLE} /> */}
         <main>
-          <Route path = '/profile/' 
-            render={ () => <Profile /> 
-            }
+          <Route path = '/profile/' component={ProfilePage}
           />
-          <Route path = '/blog' 
-            render={ () => <Blog />
-            }
+          <Route path = '/comment/:postId' component={CommentsPage}
           />
-          <Route path = '/login' 
-            render={ () => <Login />
-          }
-          />
-          <Route path = '/comment/' 
-            render={ () => <CommentPage {...COMMENTSEXAMPLE} /> 
-            }
-          />
+          <Route path='/' component={HomePage}/>
         </main>
       </div>
     </BrowserRouter>
