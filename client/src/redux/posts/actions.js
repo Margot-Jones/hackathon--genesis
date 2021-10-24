@@ -34,7 +34,7 @@ export const fetchPosts = () => async dispatch => {
   }
 };
 
-export const createPost = (title, content, thumbnailUrl, token) =>
+export const createPost = (post, token) =>
   async dispatch => {
     dispatch(createPostInit())
 
@@ -43,13 +43,15 @@ export const createPost = (title, content, thumbnailUrl, token) =>
         headers: {
           Authorization: `Bearer ${token}`
         },
-        data: { title, content, thumbnailUrl }
+        data: post
       })
 
       if (res.status !== 200) {
         return dispatch(createPostComplete())
       }
-    } catch {
 
+      return dispatch(createPostSetError())
+    } catch {
+      return dispatch(createPostSetError())
     }
 }
