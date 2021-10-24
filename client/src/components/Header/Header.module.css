@@ -46,12 +46,14 @@
   background-color: #EBEBEB;
   color: #F6AA1C;
   border: 1px solid #EBEBEB;
+  cursor: pointer;
 }
 
 .buttonLogIn:hover{
   background-color: #F6AA1C;
   color: #410000;
   border: 1px solid #F6AA1C;
+  cursor: pointer;
 }
 
 .buttonLogIn {
