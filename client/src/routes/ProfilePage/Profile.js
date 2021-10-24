@@ -37,7 +37,7 @@ const Profile = ({ posts } = {}) => {
           <UserInfo {...USER} />
         </Grid>
         <Grid className={classes.blockUsers} md={6} sm={8} xs={10}>
-          <Grid container spacing={2}>
+          <Grid container spacing={2} direction='column'>
             {posts.map((post, index) => (
               <Grid item>
                 <Post key={index} {...post} />
