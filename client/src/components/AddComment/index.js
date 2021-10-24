@@ -28,6 +28,25 @@ const useStyles = makeStyles({
     }
 });
 
+export const FindPost = ({changeValue}) => {
+    const classes = useStyles();
+
+    return (
+        <Grid className={classes.mainContent} position="static">
+            <TextField
+                style={{ fontFamily: "Rosarivo" }}
+                className={classes.textField}
+                id="add-new-post"
+                label="Find"
+                multiline
+                size="small"
+                variant="outlined"
+                onChange={changeValue}
+                />
+
+        </ Grid>
+    )
+}
 
 export const AddComment = () => {
     const classes = useStyles();

@@ -3,7 +3,7 @@ import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { BLOGSEXAMPLE, OtherBlogs } from "./OtherBlogs/OtherBlogs";
 import { Post, POSTEXAMPLE } from "./BlogBlock/Post";
-import { AddComment } from "../../components/AddComment";
+import { AddComment, FindPost } from "../../components/AddComment";
 import { SortToggler } from "./Sort";
 
 const useStyles = makeStyles({
@@ -47,6 +47,7 @@ const HomePagePresenter = ({ posts = [], isLoading, isError }) => {
   const [sortBy, setSortBy] = useState("date");
   const [descending, setDescending] = useState(true);
   const [sortFunc, setSortFunc] = useState("date" + true);
+  const [findField, setFindField] = useState('');
 
   const sortFuncs = {
     ["date" + false]: (a, b) => (a.date > b.date ? 1 : -1),
@@ -54,6 +55,11 @@ const HomePagePresenter = ({ posts = [], isLoading, isError }) => {
     ["alphabet" + false]: (a, b) => (a.authorData.toLowerCase() > b.authorData.toLowerCase() ? 1 : -1),
     ["alphabet" + true]: (a, b) => (a.authorData.toLowerCase() < b.authorData.toLowerCase() ? 1 : -1),
   };
+
+  const onFindChange = (e) => {
+    setFindField(e.target.value); 
+    console.log(e.target.value);
+  }
 
   return (
     <>
@@ -68,7 +74,8 @@ const HomePagePresenter = ({ posts = [], isLoading, isError }) => {
         >
           <Grid item container md={12} style={{ justifyContent: "center" }}>
             <Grid item md={8}>
-              <AddComment />
+              {/* <AddComment /> */}
+              <FindPost {...{changeValue: onFindChange}}/>
             </Grid>
             <Grid item md={4}>
               <SortToggler
@@ -89,7 +96,7 @@ const HomePagePresenter = ({ posts = [], isLoading, isError }) => {
             xs={12}
             spacing={2}
           >
-            {posts.sort(sortFuncs[sortFunc]).map((post) => (
+            {posts.filter((val)=>val.authorData.toLowerCase().includes(findField.toLowerCase())).sort(sortFuncs[sortFunc]).map((post) => (
               <Grid item xs={12}>
                 <Post post={post} />
               </Grid>
