@@ -1,11 +1,9 @@
 import {downloadFile} from './downloadFile';
-import {users} from './users';
 
-export const exportToJson = e => {
-    e.preventDefault();
+export const exportToJson = (post) => {
     downloadFile({
-        data: JSON.stringify(users),
-        fileName: "users.json",
+        data: JSON.stringify(post),
+        fileName: "post.json",
         fileType: "text/json",
     });
 };

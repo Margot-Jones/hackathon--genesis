@@ -1,19 +1,15 @@
 import {downloadFile} from './downloadFile';
-import {users} from './users';
 
-export const exportToCsv = e => {
-    e.preventDefault();
-    let headers = ["Id,Name,Surname,Age"];
+export const exportToCsv = (post) => {
+    let headers = ["Title, Image"];
 
-    let usersCsv = users.reduce((acc, user) => {
-        const { id, name, surname, age } = user;
-        acc.push([id, name, surname, age].join(","));
-        return acc;
-    }, []);
+    const { title, image } = post;
+
+    const usersCsv = [title, image].join(",");
 
     downloadFile({
-        data: [...headers, ...usersCsv].join("\n"),
-        fileName: "users.csv",
+        data: [...headers, usersCsv].join("\n"),
+        fileName: "post.csv",
         fileType: "text/csv",
     });
 };
